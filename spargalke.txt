@@ -1,0 +1,136 @@
+1. Elementu kurimas su DOM ---> formos kurimas su eventListener ---> formos elementu targetinimas, kad pasiimtume, ar isvestume tam tikras reiksmes (if salygos)
+2. Elementu kurimas su DOM ---> funkcijos su eventListener ---> rezultatu atvaizdavimu ekrane (siuo atveju counter'is)
+3. Elementu kurimas sy DOM ---> fetch(is API) naudojimas su eventListener ---> targetinimas node'u ---> rezultatu isvedimas ekrane
+4. Json failo kurimas ir serverio pakurimas to failo pagrindu ---> CRUD (kol kas tik Retreive buvo) --> Array metodai 
+5. Array filtravimo metodas 
+6. Array reduce metodas (kai visi skaiciai agreguojami)
+7. Objekto metodai 
+8. Klases ir ju metodai (kuriam patys metodus) (taip pat nereikia pagal uzduoti konstruktoriaus, gana kvailai, bet...)
+9. Klases ir ju metodai (atidziai skaityti uzduoti, reikia papildomai ir isvesti metus (dabartine data - pagaminimo data))
+10. Kodo taisymas (export/import)
+
+Resources: 
+
+String Metodai:
+----------------
+List'as metodų:
+https://www.w3schools.com/jsref/jsref_obj_string.asp
+
+Sintaksė su pavyzdžiais:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
+----------------------------------------------------------------------------------------------------------
+
+Number Metodai:
+----------------
+
+List'as metodų:
+https://www.w3schools.com/js/js_number_methods.asp
+
+Sintaksė su pavyzdžiais
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+----------------------------------------------------------------------------------------------------------
+
+Object Metodai:
+----------------
+
+Sintaksė su pavyzdžiais ir list'as
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+----------------------------------------------------------------------------------------------------------
+
+Array Metodai:
+----------------
+
+List'as metodų:
+https://www.w3schools.com/jsref/jsref_obj_array.asp
+
+Sintaksė su pavyzdžiais
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+Iteraciniai Array metodai:
+
+Sintakse + ypatumai:
+
+array.forEach(e => {veiksmas}) - suka ciklą per kiekvieną array elementą ir daro tam tikrą veiksmą, tačiau nesukuria naujos array.
+
+array.map(e => {veiksmai}) - suka ciklą per kiekvieną array elementą ir daro tam tikrą veiksmą ir sukuria naują array.
+
+array.filter(e => {sąlyga}) - suka ciklą per kiekvieną array elementą ir grąžina naują array su pritaikyta sąlyga.
+
+array.every (e => {sąlyga}) - suka ciklą per kiekvieną array elementą ir tikrina, ar VISI elementai tenkina sąlygą, grąžina true|false
+
+array.every (e => {sąlyga}) - suka ciklą per kiekvieną array elementą ir tikrina, ar BENT VIENAS elementas tenkina sąlygą, grąžina true|false
+
+array.find( e => {sąlyga}) - suka ciklą per kiekvieną array elementą ir ieško pagal sąlygą PIRMOJO, kuris tenkina sąlyga ir išveda jį
+
+array.findeIndex (e => {sąlyga}) - suka ciklą per kiekvieną array elementą ir ieško PIRMOJO, kuris tenkina sąlygą ir išveda jo indeksą
+
+array.reduce((PreviousValue, CurrentValue) => {veiksmai}, extraKintamasis) - suka ciklą per visą array ir ima atskiras reikšmes ir jas sudeda. ExtraKintamasis, tai nuo kurios reiksmes pradeda, pvz array [0,1,2,3], o ekstra 5, tuomet bendra suma bus 10.
+Papildomai gali prisideti ir index'as, nuo kurios pozicijos pradeti reduce.
+
+----------------------------------------------------------------------------------------------------------
+
+EventListener'iai:
+----------------
+
+List'as eventListener'ių:
+https://www.w3schools.com/jsref/dom_obj_event.asp
+----------------------------------------------------------------------------------------------------------
+
+Fetch metodas :
+----------------
+
+Sintaksė su pavyzdžiais: 
+https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+Minimalistinė sintaksė pasiimt duomenims:
+fetch('API/JsonLiveServer')
+  .then(res => res.json())
+  .then(data => {
+      console.log(data)
+      });
+
+----------------------------------------------------------------------------------------------------------
+
+Fetch metodas (CRUD) : 
+fetch('API/JSONLiveServer, {
+    method : 'POST' ('GET', 'PUT', 'DELETE) --> Get - default pasiimt duomenims, Post - irasyti duomenis, Put - pakeisti esancius duomenis, Delete - istrinti duomenis
+    headers: {
+        'Content-Type' : 'application/json',
+        'Accept' : 'application/json, text/plain */*'
+    },
+    body: JSON.stringify(struktura) <--- sioje vietoje nurodoma, kaip kokius duomenis ipostinsim i json faila (turi machint data type esanti content-type dalyje)
+}')
+    
+----------------------------------------------------------------------------------------------------------
+
+JSON Server:
+----------------
+
+JSON Server paleidimas : 
+json-server --watch data.json --port3000
+
+https://github.com/typicode/json-server
+
+----------------------------------------------------------------------------------------------------------
+
+EXTRA.
+----------------
+
+new Date() - isveda sios dienos data.
+let kintamasis = new Date() 
+kintamasis.getFullYear() - isveda tik metus (siuo atveju 2022)
+
+LABAI LABAI LABAI Atidžiai perskaityti užduotis
+
+Atsiskaitymo seka:
+1. Atsisiųsti Zip'ą iš assignments;
+2. Įsikelti viską iš Zip į JS Atsiskaitymas mano folderiuką;
+3. Atsidaryti tą failo vidų su VSCode. git bash -> code .
+4. Source control - publish to Github(Public!) 
+5. Pirmas commit ir push su pirminiais failais
+6. Daryti uzduotis ir jas commitint po viena
+
+Jei po to keiciama kazkas uzduotyje, kuri commitinta - parasyti update
