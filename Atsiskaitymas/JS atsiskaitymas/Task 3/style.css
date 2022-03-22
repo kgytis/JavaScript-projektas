@@ -67,5 +67,8 @@
 
 .bendrasDiv{
   border: 2px solid black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
