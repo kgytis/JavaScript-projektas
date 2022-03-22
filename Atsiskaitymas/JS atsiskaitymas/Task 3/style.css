@@ -59,3 +59,13 @@
   border-radius: 5px;
   background-color: #fff;
 }
+
+.image{
+  width: 200px;
+  height: 200px;
+}
+
+.bendrasDiv{
+  border: 2px solid black;
+}
+
