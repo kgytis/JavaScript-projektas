@@ -10,3 +10,10 @@ const audi = {
   year: 2005,
   color: 'white'
 };
+
+showObjectKeys = (objektas) => {
+let masyvas = Object.keys(objektas)
+console.log(masyvas)
+}
+
+showObjectKeys(audi)
