@@ -15,13 +15,11 @@ const ENDPOINT = 'https://api.github.com/users';
 const showUsers = document.querySelector("#btn")
 const output = document.querySelector("#output")
 const message = document.querySelector("#message")
-console.dir(message)
 
 showUsers.addEventListener("click", e=>{
     fetch(ENDPOINT)
     .then(res => res.json())
     .then(data => {
-        console.log(data)
         atvaizdavimas(data)
     })
 })
