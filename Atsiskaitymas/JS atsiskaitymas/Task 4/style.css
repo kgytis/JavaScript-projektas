@@ -27,3 +27,17 @@
   margin-top: 50px;
   color: #333;
 }
+
+table {
+  border-collapse: collapse;
+  margin: 10px;
+}
+
+table thead th{
+  border: 2px solid black;
+}
+
+table tbody td{
+  border: 1px solid black;
+  padding: 3px;
+}

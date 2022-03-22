@@ -12,6 +12,28 @@ bent minimalų stilių;
 const ENDPOINT = 'cars.json';
 const output = document.querySelector("#output")
 
+const table = document.createElement("table")
+const tableHead = document.createElement("thead")
+const tableHeadTr = document.createElement("tr")
+
+const tableBrandTH = document.createElement("th")
+const tableBrandText = document.createTextNode("Brand")
+const tableModelTH = document.createElement("th")
+const tableModelText = document.createTextNode("Model")
+
+const tableBody = document.createElement("tbody")
+
+tableBrandTH.append(tableBrandText)
+tableModelTH.append(tableModelText)
+
+tableHeadTr.append(tableBrandTH)
+tableHeadTr.append(tableModelTH)
+
+tableHead.append(tableHeadTr)
+table.append(tableHead)
+table.append(tableBody)
+output.append(table)
+
 fetch(ENDPOINT)
 .then(res => res.json())
 .then(data => {
@@ -21,29 +43,24 @@ fetch(ENDPOINT)
 
 atvaizdavimas = (info) => {
     info.forEach(e => {
-        let naujasDiv = document.createElement("div");
-        let brand = document.createElement("h2");
-        let brandText = document.createTextNode(e.brand)
+        let naujasTr = document.createElement("tr");
+        let brandTd = document.createElement("td");
+        let brandTdText = document.createTextNode(e.brand)
+        let modelTd = document.createElement("td");
+        let modelTdText = document.createTextNode(modeliai(e.models))
 
-        brand.append(brandText)
-        naujasDiv.append(brand)
-        naujasDiv.append(modeliai(e.models))
-        output.append(naujasDiv)
-        output.style.display = "grid"
-        output.style.gridTemplateColumns = "repeat(10, 1fr)"
-        output.style.gridTemplateRows = "repeat(4, 1fr)"
+        brandTd.append(brandTdText)
+        naujasTr.append(brandTd)
+        modelTd.append(modelTdText)
+        naujasTr.append(modelTd)
+        tableBody.append(naujasTr)
     })
 }
 
 modeliai = (info) => {
-    let models = document.createElement("ul")
+    let models = []
     info.forEach(e => {
-        let listItem = document.createElement("li")
-        let listItemText = document.createTextNode(`${e}`)
-        //console.log(listItemText)
-        listItem.append(listItemText)
-        models.append(listItem)
-        //console.log(listItem)
+        models.push(e)
     })
-    return models
+    return models.join(' | ')
 }
