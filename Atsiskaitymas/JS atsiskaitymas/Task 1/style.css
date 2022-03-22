@@ -52,6 +52,19 @@ form {
   color: #fff;
 }
 
+.bendrasDiv{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.bendrasDiv h2{
+  border: 2px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+
+
 /* Tablet */
 @media screen and (min-width: 768px) {
   .headline {
